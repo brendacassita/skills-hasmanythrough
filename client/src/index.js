@@ -7,6 +7,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./pages/About";
 import DataProvider from "./providers/DataProvider";
 import Home from "./pages/Home";
+import Users from "./pages/Users";
+import Skills from "./pages/Skills";
+import Grades from "./pages/Grades";
 
 
 const NotFound = ()=>{
@@ -18,8 +21,12 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route index path="/home" element={<Home />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/grades" element={<Grades />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
